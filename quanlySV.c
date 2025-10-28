@@ -5,6 +5,7 @@ typedef struct{
 	char hoten[50];
 	int tuoi;
 	float dtb;
+	char ngaysinh[11];
 }SinhVien;
 void nhap1sv (SinhVien *sv){
 	printf("Nhap ma sinh vien: ");
@@ -15,6 +16,10 @@ void nhap1sv (SinhVien *sv){
 	sv->hoten[strcspn(sv->hoten, "\n")]='\0';
 	printf("Nhap tuoi: ");
 	scanf("%d",&sv->tuoi);
+	while(getchar()!='\n');
+	printf("Nhap ngay sinh (DD/MM/YYYY): ");
+    fgets(sv->ngaysinh, sizeof(sv->ngaysinh), stdin);
+    sv->ngaysinh[strcspn(sv->ngaysinh, "\n")]='\0';
 	printf("Nhap diem trung binh: ");
 	scanf("%f",&sv->dtb);
 	while(getchar()!='\n');
@@ -28,6 +33,7 @@ void nhapds(SinhVien ds[], int n){
 void xuat1sv (SinhVien sv){
 	printf("Ma sinh vien: %s\n",sv.masv);
 	printf("Ho ten: %s\n",sv.hoten);
+	printf("Ngay sinh: %s\n", sv.ngaysinh);
 	printf("Tuoi: %d\n",sv.tuoi);
 	printf("Diem trung binh: %.2f\n",sv.dtb);
 }

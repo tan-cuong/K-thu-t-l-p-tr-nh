@@ -12,7 +12,7 @@ void tinhtien(long long gia, long long tienvao){
     t10=conlai/10;
     printf("%lld=%lld * 10 + %lld * 5 + %lld * 1\n",tienthua,t10,t5,t1);
 }
-main(){
+int main(){
     long long x, y;
     printf("Nhap gia tien: "); scanf("%lld",&x);
     printf("Nhap so tien dua vao: "); scanf("%lld",&y);
